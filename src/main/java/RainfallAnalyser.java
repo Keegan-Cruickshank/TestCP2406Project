@@ -38,6 +38,9 @@ public class RainfallAnalyser {
                     if(year != currentYear) {
                         if(currentYear != 0) {
                             for (int month = 0; month < MONTHS.length; month++) {
+                                if(minMax[month][0] == 0.0) {
+                                    minMax[month][0] = minMax[month][1];
+                                }
                                 System.out.println(fixedLengthString(MONTHS[month], 10) + "| Min: " + fixedLengthString(Double.toString(minMax[month][0]), 5) + " | Max: " + fixedLengthString(Double.toString(minMax[month][1]), 5));
                             }
                         }
